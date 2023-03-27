@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RossD_InfoTest
 {
-    public class RossD_Disoccupato : RossD_Candidato
+    public class RossD_Disoccupato : RossD_Candidato //: IComperable<RossD_Disoccupato> : IEquetable<RossD_Disoccupato>
     {
         private int RossD_voto;
         private bool RossD_lode;

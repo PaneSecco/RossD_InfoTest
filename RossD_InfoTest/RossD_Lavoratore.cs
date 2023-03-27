@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RossD_InfoTest
 {
-    internal class RossD_Lavoratore : RossD_Candidato
+    internal class RossD_Lavoratore : RossD_Candidato //: IComperable<RossD_Lavoratore> : IEquetable<RossD_Lavoratore>
     {
         private int RossD_esperienze;
 

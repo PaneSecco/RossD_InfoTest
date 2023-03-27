@@ -50,7 +50,7 @@ namespace RossD_InfoTest
             }
             return false;
         }
-
+        /*
         public virtual bool EqualsType(RossD_Candidato other)
         {
             if (this.GetType is other.GetType)
@@ -59,6 +59,7 @@ namespace RossD_InfoTest
             }
             return false;
         }
+        */
 
         public virtual int GetHashCode()
         {
