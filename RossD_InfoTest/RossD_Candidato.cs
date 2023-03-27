@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RossD_InfoTest
 {
-    abstract class RossD_Candidato
+    public abstract class RossD_Candidato
     {
         private int RossD_matricola;
         private string RossD_nome;
