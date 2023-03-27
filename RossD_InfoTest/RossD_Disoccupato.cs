@@ -69,5 +69,44 @@ namespace RossD_InfoTest
             }
             return false;
         }
+        public override string ToString()
+        {
+            return "matricola: " + Convert.ToString(RossD_Matricola) + " nome: " + RossD_Nome + " voto: " + RossD_Voto + " lode: " + RossD_Lode;
+        }
+
+        public override bool Equals(RossD_Candidato other)
+        {
+            if (this.RossD_Matricola == other.RossD_Matricola && this.RossD_Nome == other.RossD_Nome)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool Equals(RossD_Disoccupato other)
+        {
+            if (this.RossD_Voto == other.RossD_Voto && this.RossD_Lode == other.RossD_Lode)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public int CompareTo(RossD_Disoccupato uno, RossD_Disoccupato due)
+        {
+            if (uno.punteggio() == due.punteggio())
+            {
+                return 0;
+            }
+            if (uno.punteggio() > due.punteggio())
+            {
+                return -1;
+            }
+            else
+            {
+                return 1;
+            }
+        }
+
     }
 }

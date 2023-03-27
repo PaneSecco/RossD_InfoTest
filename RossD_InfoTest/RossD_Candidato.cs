@@ -40,5 +40,29 @@ namespace RossD_InfoTest
 
         public abstract bool isIdoneo();
         public abstract int punteggio();
+
+        public abstract string ToString();
+        public virtual bool Equals(RossD_Candidato other)
+        {
+            if (this.RossD_Matricola == other.RossD_Matricola && this.RossD_Nome == other.RossD_Nome)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public virtual bool EqualsType(RossD_Candidato other)
+        {
+            if (this.GetType is other.GetType)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public virtual int GetHashCode()
+        {
+            return (RossD_Matricola, RossD_Nome).GetHashCode();
+        }
     }
 }
