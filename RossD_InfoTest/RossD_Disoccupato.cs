@@ -16,7 +16,7 @@ namespace RossD_InfoTest
             get { return RossD_voto; }
 
             set {
-                if (value > 110)
+                if (value > 110 || value<0)
                 {
                     throw new Exception(" il valore inserito supera il limite di 110");
                 }
@@ -38,7 +38,8 @@ namespace RossD_InfoTest
         }
         public RossD_Disoccupato(): base()
         {
-
+            RossD_Voto = 0;
+            RossD_Lode = false;
         }
         public RossD_Disoccupato(int voto, bool lode) : base()
         {
