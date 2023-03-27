@@ -18,7 +18,7 @@ namespace RossD_InfoTest
             set {
                 if (value > 110)
                 {
-                    throw new Exception(" il valore inserito supera 110");
+                    throw new Exception(" il valore inserito supera il limite di 110");
                 }
                 else
                 {
