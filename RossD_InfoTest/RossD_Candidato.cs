@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RossD_InfoTest
 {
-    public abstract class RossD_Candidato
+    public abstract class RossD_Candidato : IComperable<RossD_Candidato>,IEquetable<RossD_Candidato>
     {
         private int RossD_matricola;
         private string RossD_nome;
@@ -41,7 +41,10 @@ namespace RossD_InfoTest
         public abstract bool isIdoneo();
         public abstract int punteggio();
 
-        public abstract string ToString();
+        public virtual string ToString()
+        {
+            return "matricola: " + Convert.ToString(RossD_Matricola) + " nome: " + RossD_Nome;
+        }
         public virtual bool Equals(RossD_Candidato other)
         {
             if (this.RossD_Matricola == other.RossD_Matricola && this.RossD_Nome == other.RossD_Nome)
