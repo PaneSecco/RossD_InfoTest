@@ -48,15 +48,15 @@ namespace RossD_InfoTest
 
         public override int punteggio()
         {
-            int rapportato = RossD_Voto;
+            int rapportato = RossD_Voto / 110 * 100;
             if (RossD_Lode== true)
             {
                 rapportato += 5;
-                return RossD_Voto / 110 * 100;
+                return rapportato;
             }
             else
             {
-                return RossD_Voto / 110 * 100;
+                return rapportato;
             }
         }
 
