@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RossD_InfoTest
 {
-    internal class RossD_Lavoratore : RossD_Candidato ,IComperable<RossD_Lavoratore>, Equetable<RossD_Lavoratore>
+    internal class RossD_Lavoratore : RossD_Candidato, IEquatable<RossD_Lavoratore>, IComparable<RossD_Lavoratore>
     {
         private int RossD_esperienze;
 
@@ -55,30 +55,23 @@ namespace RossD_InfoTest
         {
             return "matricola: " + Convert.ToString(RossD_Matricola) + " nome: " + RossD_Nome + " esperienze: " + Convert.ToString(RossD_Esperienze);
         }
-        public override bool Equals(RossD_Candidato other)
-        {
-            if (this.RossD_Matricola == other.RossD_Matricola && this.RossD_Nome == other.RossD_Nome)
-            {
-                return true;
-            }
-            return false;
-        }
+
 
         public bool Equals(RossD_Lavoratore other)
         {
-            if (this.RossD_Esperienze == other.RossD_Esperienze)
-            {
+            if (base.Equals(other) == true && other.RossD_esperienze == this.RossD_esperienze)
                 return true;
-            }
-            return false;
+            else
+                return false;
         }
-        public int CompareTo(RossD_Lavoratore uno, RossD_Lavoratore due)
+
+        public int CompareTo(RossD_Lavoratore uno)
         {
-            if (uno.punteggio() == due.punteggio())
+            if (uno.punteggio() == this.punteggio())
             {
                 return 0;
             }
-            if (uno.punteggio() > due.punteggio())
+            if (uno.punteggio() > this.punteggio())
             {
                 return -1;
             }

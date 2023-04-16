@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RossD_InfoTest
 {
-    public class RossD_Disoccupato : RossD_Candidato,IComperable<RossD_Disoccupato>, Equetable<RossD_Disoccupato> 
+    public class RossD_Disoccupato : RossD_Candidato, IComparable<RossD_Disoccupato>, IEquatable<RossD_Disoccupato> 
     {
         private int RossD_voto;
         private bool RossD_lode;
@@ -74,31 +74,22 @@ namespace RossD_InfoTest
             return "matricola: " + Convert.ToString(RossD_Matricola) + " nome: " + RossD_Nome + " voto: " + RossD_Voto + " lode: " + RossD_Lode;
         }
 
-        public override bool Equals(RossD_Candidato other)
-        {
-            if (this.RossD_Matricola == other.RossD_Matricola && this.RossD_Nome == other.RossD_Nome)
-            {
-                return true;
-            }
-            return false;
-        }
 
         public bool Equals(RossD_Disoccupato other)
         {
-            if (this.RossD_Voto == other.RossD_Voto && this.RossD_Lode == other.RossD_Lode)
-            {
+            if (base.Equals(other) == true && other.punteggio() == this.punteggio())
                 return true;
-            }
-            return false;
+            else
+                return false;
         }
 
-        public int CompareTo(RossD_Disoccupato uno, RossD_Disoccupato due)
+        public int CompareTo(RossD_Disoccupato uno)
         {
-            if (uno.punteggio() == due.punteggio())
+            if (uno.punteggio() == this.punteggio())
             {
                 return 0;
             }
-            if (uno.punteggio() > due.punteggio())
+            if (uno.punteggio() > this.punteggio())
             {
                 return -1;
             }

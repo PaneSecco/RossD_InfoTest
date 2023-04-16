@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RossD_InfoTest
 {
-    public abstract class RossD_Candidato : IComperable<RossD_Candidato>,IEquetable<RossD_Candidato>
+    public abstract class RossD_Candidato : IEquatable<RossD_Candidato>
     {
         private int RossD_matricola;
         private string RossD_nome;
@@ -53,20 +53,10 @@ namespace RossD_InfoTest
             }
             return false;
         }
-        /*
-        public virtual bool EqualsType(RossD_Candidato other)
-        {
-            if (this.GetType is other.GetType)
-            {
-                return true;
-            }
-            return false;
-        }
-        */
 
         public virtual int GetHashCode()
         {
-            return (RossD_Matricola, RossD_Nome).GetHashCode();
+            return (RossD_Matricola + RossD_Nome).GetHashCode();
         }
     }
 }
